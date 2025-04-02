@@ -1,23 +1,12 @@
-import random
-import matplotlib.pyplot as plt
+import numpy.random as rnd
 
-def monte_carlo_area(n=100000):
-    inside_triangle = 0
-    points_in_triangle = []
-    points_outside_triangle = []
-    
-    for _ in range(n):
-        x, y = random.uniform(0, 10), random.uniform(0, 10) 
-        if x + y <= 10:  
-            inside_triangle += 1
-            points_in_triangle.append((x, y))
-        else:
-            points_outside_triangle.append((x, y))
-    
-    square_area = 100  
-    triangle_area = (inside_triangle / n) * square_area  
-    
-    return triangle_area, points_in_triangle, points_outside_triangle
-
-estimated_area, points_in_triangle, points_outside_triangle = monte_carlo_area()
-
+def Pi(N):
+    N_circle = 0
+    i = 1
+    while i <= N:
+        x, y = rnd.rand(2)
+        if x*x + y*y <= 1:
+            N_circle = N_circle + 1
+        i = i + 1
+    Pi = 4 * N_circle / float(N)
+    return Pi
