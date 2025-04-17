@@ -1,0 +1,78 @@
+
+def desitkova_na_dvojkovou(n):
+    if n == 0:
+        return "0"
+    vysledek = ""
+    while n > 0:
+        zbytek = n % 2  # zbytek po dělení dvěma
+        vysledek = chr(zbytek + 48) + vysledek  # převedeme číslici na znak
+        n = n // 2
+    return vysledek
+
+
+def dvojkova_na_desitkovou
+    mocnina = 1
+    vysledek = 0
+    for znak in reversed(bin_str):  # začínáme od konce
+        cislo = ord(znak) - 48
+        vysledek += cislo * mocnina
+        mocnina *= 2
+    return vysledek
+
+
+def scitej_dvojkove(a, b):
+   
+    max_len = max(len(a), len(b))
+    a = a.zfill(max_len)
+    b = b.zfill(max_len)
+
+    vysledek = ""
+    prenos = 0  
+
+    for i in range(max_len - 1, -1, -1):  
+        bit1 = ord(a[i]) - 48
+        bit2 = ord(b[i]) - 48
+        soucet = bit1 + bit2 + prenos
+
+       
+        vysledek = chr((soucet % 2) + 48) + vysledek
+        prenos = soucet // 2
+
+    if prenos == 1:
+        vysledek = "1" + vysledek
+
+    return vysledek
+
+
+def text_na_cislo(text):
+    cislo = 0
+    for znak in text:
+        cislo = cislo * 10 + (ord(znak) - 48)
+    return cislo
+
+
+print("===== ČÍSELNÉ SOUSTAVY - MENU =====")
+print("1) Převod z desítkové do dvojkové")
+print("2) Převod z dvojkové do desítkové")
+print("3) Sčítání dvou binárních čísel")
+volba = input("Zadej volbu (1-3): ")
+
+if volba == "1":
+    vstup = input("Zadej desítkové číslo: ")
+    cislo = text_na_cislo(vstup)
+    binarni = desitkova_na_dvojkovou(cislo)
+    print("Dvojkové číslo je:", binarni)
+
+elif volba == "2":
+    bin_cislo = input("Zadej binární číslo: ")
+    desitkove = dvojkova_na_desitkovou(bin_cislo)
+    print("Desítkové číslo je:", desitkove)
+
+elif volba == "3":
+    bin1 = input("Zadej první binární číslo: ")
+    bin2 = input("Zadej druhé binární číslo: ")
+    soucet = scitej_dvojkove(bin1, bin2)
+    print("Součet v binární soustavě je:", soucet)
+
+else:
+    print("Neplatná volba. Zkus to znovu.")
