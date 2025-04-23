@@ -1,10 +1,20 @@
-def d(a): return bin(int(a))[2:]
-def b(a): return int(a,2)
-def s(a): return sum(map(int,a.split()))
-def sb(a): return bin(sum(int(x,2) for x in a.split()))[2:]
+def desitkova_na_dvojkovou(cislo):
+    return bin(cislo)[2:]
 
-while True:
-    v = int(input("1=10→2 2=2→10 3=s10 4=s2 0=konec: "))
-    if v == 0: break
-    a = input()
-    print(d(a) if v==1 else b(a) if v==2 else s(a) if v==3 else sb(a))
+def dvojkova_na_desitkovou(dvojkove_cislo):
+    return int(dvojkove_cislo, 2)
+
+def scitej_desitkova(a, b):
+    return a + b
+
+def scitej_dvojkova(bin1, bin2):
+
+    des1 = int(bin1, 2)
+    des2 = int(bin2, 2)
+    soucet = des1 + des2
+    return bin(soucet)[2:]  
+
+print("Desítková na dvojkovou:", desitkova_na_dvojkovou(42))  
+print("Dvojková na desítkovou:", dvojkova_na_desitkovou("101010"))  
+print("Sčítání v desítkové:", scitej_desitkova(25, 17)) 
+print("Sčítání ve dvojkové:", scitej_dvojkova("11001", "10001")) 
