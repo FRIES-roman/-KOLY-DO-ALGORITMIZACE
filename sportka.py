@@ -13,7 +13,7 @@ def ziskej_cisla(use_generated=True):
         uzivatelova_cisla = []
         print("Zadejte 6 různých čísel mezi 1 a 49:")
         while len(uzivatelova_cisla) < 6:
-            try
+            
                
                 cislo = int(input(f"Číslo {len(uzivatelova_cisla) + 1}: "))
                 if cislo < 1 or cislo > 49:
