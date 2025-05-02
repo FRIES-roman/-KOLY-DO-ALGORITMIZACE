@@ -1,4 +1,4 @@
-def generate_unique_digit_rc_post_2000():
+def generate_unique_digit_rc_post_2008():
     from itertools import permutations
     
     valid_numbers = []
@@ -33,7 +33,7 @@ def generate_unique_digit_rc_post_2000():
                     remaining_digits = [d for d in digits if d not in date_part]
                     
                     
-                    for suffix in permutations(remaining_digits, 4):
+                    for suffix in permutations (remaining_digits, 4):
                         suffix_str = ''.join(suffix)
                         full_number = date_part + suffix_str
                         
@@ -46,7 +46,7 @@ def generate_unique_digit_rc_post_2000():
     return valid_numbers
 
 
-valid_rc_numbers = generate_unique_digit_rc_post_2000()
+valid_rc_numbers = generate_unique_digit_rc_post_2008()
 
 
 print(f"Celkový počet nalezených rodných čísel: {len(valid_rc_numbers)}")
