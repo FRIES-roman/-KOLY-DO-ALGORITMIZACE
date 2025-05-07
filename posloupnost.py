@@ -1,8 +1,8 @@
 def fibonacci(n):
     a, b = 0, 1
     sea = []
-    while len(seq) < n:
-        seq.append(a)
+    while len(sea) < n:
+        sea.append(a)
         a, b = b, a + b
     return sea
 
